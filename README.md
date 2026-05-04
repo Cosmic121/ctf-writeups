@@ -7,7 +7,7 @@ This Repo documents my CTFs journey, the tools i use and their implementation to
 - PicoCTF
 
 ## Concepts Learned up until now:
--
+- Network Fundamentals
 
 ## Tools Used:
 -
