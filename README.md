@@ -2,12 +2,12 @@
 
 This Repo documents my CTFs journey, the tools i use and their implementation to solve the labs.
 
-Platforms:
+## Platforms:
 - TryHackMe
 - PicoCTF
 
-Concepts Learned up until now:
+## Concepts Learned up until now:
 -
 
-Tools Used:
+## Tools Used:
 -
