@@ -6,7 +6,7 @@ This Repo documents my CTFs journey, the tools i use and their implementation to
 - TryHackMe
 - PicoCTF
 
-## Concepts Learned up until now:
+## Concepts Learned:
 - Network Fundamentals
 
 ## Tools Used:
