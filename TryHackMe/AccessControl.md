@@ -17,3 +17,22 @@ Setting up an login page for authentication instead of granting admin privileges
 **Real world impact:** 
 An Attacker can easily perform Vertical Privilege Escalation and exploit admin privileges.
 
+---
+
+### Lab: Unprotected admin functionality with unpredictable URL
+
+**What the app assumed:**
+If the path to admin panel isn't visible on the user interface the users wouldn't find it.
+
+**How I found it:**
+Inspected the source code of the app, to find out client-side exposure inside JS gives away the path to admin panel.
+
+**The requests that mattered:**
+GET /admin-neql3z -> Grants access to the admin panel
+
+**What a proper fix looks like:**
+Setting up authorization for the admin panel 
+Admin path shouldn't exist inside the client-side code of JavaScript.
+
+**Real world impact:**
+An Attacker can easily perform Vertical Privilege Escalation and exploit admin privileges.
