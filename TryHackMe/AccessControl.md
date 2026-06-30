@@ -36,3 +36,26 @@ Admin path shouldn't exist inside the client-side code of JavaScript.
 
 **Real world impact:**
 An Attacker can easily perform Vertical Privilege Escalation and exploit admin privileges.
+
+---
+
+### Lab: User role can be modified in user profile
+
+**What the app assumed:**
+The user would only submit the existing fields and server didn't need to validate the information
+
+**How I found it:**
+i logged in with the credentials provided via the /login path. Submitted a form which changes the user's email. intercepted the request and response with burp, which revealed the roleid field. Using repeater to modify the request which was accepted by the server without validating it, gained access to admin.
+
+**The requests that mattered:**
+POST /login -> Logged in using the credentials 
+POST /my-account/change-email -> Response revealed the roleid field
+POST /my-account/change-email -> Modified the JSON document my adding a roleid field with value 2
+GET /admin -> Admin access gained
+
+**What a proper fix looks like:**
+The Server should validate request from client-side and should only consider existing fields of a request.
+
+**Real world impact:**
+An attacker can easily manipulate the request which would be processed by the server. This leads to exposing sensitive information and privilege escalation
+
